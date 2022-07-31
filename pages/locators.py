@@ -16,3 +16,4 @@ class ProductPageLocators():
     PRICE = (By.CLASS_NAME, "price_color")
     ITEM_IN_BASKET = (By.XPATH, '//*[@id="messages"]/div[1]/div/strong')
     PRICE_IN_BASKET = (By.XPATH, '//*[@id="messages"]/div[3]/div/p[1]/strong')
+    SUCCESS_MESSAGE = (By.CLASS_NAME, 'alert-success')

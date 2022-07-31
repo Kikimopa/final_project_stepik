@@ -14,8 +14,8 @@ def browser(request):
     options = Options()
     options.add_experimental_option('prefs', {'intl.accept_languages': browser_language})
     options.add_argument("--headless")
-    browser = webdriver.Chrome(options=options)
-
+    # browser = webdriver.Chrome(options=options)
+    browser = webdriver.Chrome()
     yield browser
     print("\nquit browser..")
     browser.close()
