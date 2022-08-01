@@ -1,6 +1,9 @@
 from selenium.webdriver.common.by import By
 
-
+class BasketPageLocators():
+    BASKET = (By.XPATH, '//*[@id="default"]/header/div[1]/div/div[2]/span/a')
+    BASKET_ITEMS = (By.CLASS_NAME, "basket-items")
+    BASKET_TEXT = (By.XPATH, '//*[@id="content_inner"]/p')
 
 
 class LoginPageLocators():
