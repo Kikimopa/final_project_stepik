@@ -26,7 +26,6 @@ class TestLoginFromMainPage():
 
 @pytest.mark.new
 def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
-
     page = MainPage(browser, link)
     page.open()
     basket = BasketPage(browser, browser.current_url)
@@ -34,6 +33,17 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     basket.check_empty_basket()
     time.sleep(5)
     basket.check_basket_text()
+
+
+@pytest.mark.negative
+@pytest.mark.xfail
+def test_guest_cant_see_product_in_basket_opened_from_main_page_negative(browser):
+    page = MainPage(browser, link)
+    page.open()
+    basket = BasketPage(browser, browser.current_url)
+    basket.click_to_basket_from_main_page()
+    basket.negative_check_empty_basket()
+    basket.negative_check_basket_text()
 
 
 

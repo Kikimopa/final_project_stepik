@@ -71,8 +71,19 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     basket = BasketPage(browser, browser.current_url)
     basket.click_to_basket_from_main_page()
     basket.check_empty_basket()
-    time.sleep(5)
     basket.check_basket_text()
+
+
+@pytest.mark.negative
+@pytest.mark.xfail
+def test_guest_cant_see_product_in_basket_opened_from_product_page_negative(browser):
+    link = "http://selenium1py.pythonanywhere.com"
+    page = ProductPage(browser, link)
+    page.open()
+    basket = BasketPage(browser, browser.current_url)
+    basket.click_to_basket_from_main_page()
+    basket.negative_check_basket_text()
+    basket.negative_check_basket_text()
 
 
 
